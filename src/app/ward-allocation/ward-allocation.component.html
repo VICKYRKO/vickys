@@ -1,1 +1,17 @@
 <p>ward-allocation works!</p>
+<div *ngIf="patient">
+    <h2>Patient Details</h2>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ patient.name }}</mat-card-title>
+        <mat-card-subtitle>{{ patient.patientId }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Date of Birth:</strong> {{ patient.dob }}</p>
+        <p><strong>Medical Conditions:</strong> {{ patient.medicalConditions }}</p>
+        <p><strong>Gender:</strong> {{ patient.gender }}</p>
+        <p><strong>Created Time:</strong> {{ patient.createdTime }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
