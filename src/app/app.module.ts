@@ -6,7 +6,7 @@ import { PatientFormComponent } from './patient-form/patient-form.component';
 import { PatientSearchComponent } from './patient-search/patient-search.component';
 import { WardAllocationComponent } from './ward-allocation/ward-allocation.component';
 import { PatientTransferComponent } from './patient-transfer/patient-transfer.component';
-import { FinalOutcomeComponent } from './final-outcome/final-outcome.component';
+
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
     PatientSearchComponent,
     WardAllocationComponent,
     PatientTransferComponent,
-    FinalOutcomeComponent,
+   
     HeaderComponent
   ],
   imports: [
