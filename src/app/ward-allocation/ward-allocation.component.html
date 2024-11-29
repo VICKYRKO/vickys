@@ -1,17 +1,25 @@
-<p>ward-allocation works!</p>
-<div *ngIf="patient">
-    <h2>Patient Details</h2>
-    <mat-card>
+<!-- Patient Banner -->
+<div class="patient-banner" *ngIf="patient">
+    <mat-card class="patient-banner-card">
       <mat-card-header>
         <mat-card-title>{{ patient.name }}</mat-card-title>
-        <mat-card-subtitle>{{ patient.patientId }}</mat-card-subtitle>
+        <mat-card-subtitle>Patient ID: {{ patient.patientId }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p><strong>Date of Birth:</strong> {{ patient.dob }}</p>
         <p><strong>Medical Conditions:</strong> {{ patient.medicalConditions }}</p>
         <p><strong>Gender:</strong> {{ patient.gender }}</p>
-        <p><strong>Created Time:</strong> {{ patient.createdTime }}</p>
+        <p><strong>Current Ward:</strong> {{ patient.ward || 'Not Assigned' }}</p>
       </mat-card-content>
+      <mat-card-actions>
+        <!-- Ward Dropdown -->
+        <mat-form-field appearance="outline" class="ward-dropdown">
+          <mat-label>Select Ward</mat-label>
+          <mat-select [(value)]="patient.ward" (selectionChange)="assignWard($event.value)">
+            <mat-option *ngFor="let ward of wards" [value]="ward">{{ ward }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-actions>
     </mat-card>
   </div>
   

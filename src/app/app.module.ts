@@ -17,6 +17,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { DragDropModule } from '@angular/cdk/drag-drop'; 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -32,10 +38,10 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,FormsModule,HttpClientModule,ReactiveFormsModule,  MatTableModule,
-    MatCheckboxModule,
+    MatCheckboxModule,MatProgressSpinnerModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule,MatCardModule
+    MatFormFieldModule,MatCardModule,MatGridListModule,DragDropModule,MatSnackBarModule,MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

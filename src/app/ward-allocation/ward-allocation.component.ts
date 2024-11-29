@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter } from 'rxjs';
+
 import { PatientService } from '../patient.service';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-ward-allocation',
@@ -11,7 +12,7 @@ import { PatientService } from '../patient.service';
 export class WardAllocationComponent implements OnInit {
   patientId: any;
   patient: any;
-
+  wards: string[] = ['Ortho', 'Surgery', 'Maternity', 'Pediatric']; 
   constructor(private router: ActivatedRoute,private patientService :PatientService) {}
   ngOnInit(): void {
   
@@ -28,7 +29,16 @@ export class WardAllocationComponent implements OnInit {
         
       });
     }
+
    
   }
+  assignWard(newWard: string): void {
+    if (this.patient) {
+      this.patient.ward = newWard;
+      console.log(`Assigned ${this.patient.name} to ${newWard}`);
+    }
+  }
+ 
+ 
 
 }
