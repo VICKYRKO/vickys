@@ -22,6 +22,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
+import { PatientService } from './patient.service';
+import { WardcolorDirective } from './wardcolor.directive';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {MatSelectModule} from '@angular/material/select';
     WardAllocationComponent,
     PatientTransferComponent,
    
-    HeaderComponent
+    HeaderComponent,WardcolorDirective
+        
   ],
   imports: [
     BrowserModule,
@@ -41,9 +44,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatCheckboxModule,MatProgressSpinnerModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule,MatCardModule,MatGridListModule,DragDropModule,MatSnackBarModule,MatSelectModule
+    MatFormFieldModule,MatCardModule,MatGridListModule,DragDropModule,MatSnackBarModule,MatSelectModule,
   ],
-  providers: [],
+  providers: [PatientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

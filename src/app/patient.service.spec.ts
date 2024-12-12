@@ -5,12 +5,15 @@ import { PatientService } from './patient.service';
 describe('PatientService', () => {
   let service: PatientService;
 
+  
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [PatientService],
+    });
     service = TestBed.inject(PatientService);
   });
 
-  it('should be created', () => {
+  it('patient service should be created', () => {
     expect(service).toBeTruthy();
   });
 });

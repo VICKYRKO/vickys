@@ -1,14 +1,14 @@
-<p>patient-form works!</p>
+<p #p>patient-form works!</p>
 <div class="container">
 
     <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
         <div>
             <label for="name">Patient Name:</label>
-            <input id="name" formControlName="name" type="text" />
+            <input #input id="name" formControlName="name" type="text" />
         </div>
         <div>
             <label for="dob">Date of Birth:</label>
-            <input id="dob" formControlName="dob" type="date" />
+            <input  id="dob" formControlName="dob" type="date" />
         </div>
         <div>
         <label for="gender">Gender:</label>
@@ -21,7 +21,7 @@
         </div>
         <div>
             <label for="medicalConditions">Medical Conditions:</label>
-            <textarea id="medicalConditions" formControlName="medicalConditions"></textarea>
+            <textarea  id="medicalConditions" formControlName="medicalConditions"></textarea>
         </div>
         <button type="submit" [disabled]="patientForm.invalid">Submit</button>
   

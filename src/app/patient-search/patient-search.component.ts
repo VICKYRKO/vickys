@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class PatientSearchComponent {
 
   displayedColumns: string[] = ['select', 'patientId', 'name', 'dob', 'medicalConditions', 'actions'];
-  patients: any[] = []; // Store fetched patient data
+  patients: any[] = []; 
   filteredPatients: any[] = [];
   searchText: string = '';
   loading: boolean = false;

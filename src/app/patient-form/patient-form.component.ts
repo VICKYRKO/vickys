@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormGroup,Validators,FormBuilder } from '@angular/forms';
 import { PatientService } from '../patient.service';
 @Component({
@@ -7,6 +7,8 @@ import { PatientService } from '../patient.service';
   styleUrls: ['./patient-form.component.css']
 })
 export class PatientFormComponent {
+  @ViewChild('input') button!: ElementRef;
+  @ViewChildren('input') inputs!: QueryList<ElementRef>;
   patientForm: FormGroup;
   constructor( private fb:FormBuilder,private patientService:PatientService){
     this.patientForm=this.fb.group({
@@ -16,6 +18,13 @@ export class PatientFormComponent {
       medicalConditions: [''],
     })
    }
+   ngAfterViewInit() {
+    console.log(  "value;",this.button.nativeElement.textContent);
+    //console.log(this.inputs.forEach((value)=>{ console.log(value.nativeElement)})); // Access the button DOM element
+    this.button.nativeElement.placeholder="fill the name";
+   
+    
+  }
    onSubmit() {
     if (this.patientForm.valid) {
       var formData = this.patientForm.value;

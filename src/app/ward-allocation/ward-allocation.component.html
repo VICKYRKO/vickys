@@ -1,5 +1,6 @@
 <!-- Patient Banner -->
 <div class="patient-banner" *ngIf="patient">
+  
     <mat-card class="patient-banner-card">
       <mat-card-header>
         <mat-card-title>{{ patient.name }}</mat-card-title>
@@ -9,7 +10,9 @@
         <p><strong>Date of Birth:</strong> {{ patient.dob }}</p>
         <p><strong>Medical Conditions:</strong> {{ patient.medicalConditions }}</p>
         <p><strong>Gender:</strong> {{ patient.gender }}</p>
-        <p><strong>Current Ward:</strong> {{ patient.ward || 'Not Assigned' }}</p>
+        <p [appWardColor]="">
+          <strong>Current Ward:</strong> {{ patient.ward || 'Not Assigned' }}
+        </p>
       </mat-card-content>
       <mat-card-actions>
         <!-- Ward Dropdown -->

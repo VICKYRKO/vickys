@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { of } from 'rxjs'
 import { PatientService } from '../patient.service';
-import { CdkDragDrop } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-ward-allocation',
@@ -15,8 +15,8 @@ export class WardAllocationComponent implements OnInit {
   wards: string[] = ['Ortho', 'Surgery', 'Maternity', 'Pediatric']; 
   constructor(private router: ActivatedRoute,private patientService :PatientService) {}
   ngOnInit(): void {
-  
 
+  
     this.patientId = this.router.snapshot.queryParamMap.get('patientId');
     console.log('Patient ID from query params:', this.patientId);
     if (this.patientId) {
